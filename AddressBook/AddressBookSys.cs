@@ -121,8 +121,21 @@ namespace AddressBook
                 }
             }
         }
+        public void DeleteRecord(string fname)  // Creating class method to delete record which takes first name as parameter
+        {
+            foreach (var record in addressbook.ToList()) // Accessing all the records of list one by one using foreach loop
+            {
+                if (record.fName == fname)  // Checking that first name provided by user is matching with Existing Reord or not
+                {
+                    addressbook.Remove(record); // Deleting all the details of one user in Address Book
+                    Console.WriteLine("\nRecord Deleted Successfully");
+                }
+            }
+        }
     }
 }
+
+
 
 
             

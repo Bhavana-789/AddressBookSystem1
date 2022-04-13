@@ -12,6 +12,7 @@ namespace AddressBook
                 Console.WriteLine("\n\nWelcome to Address Book System");
                 Console.WriteLine("1. Add a new Record");
                 Console.WriteLine("2. Update a Record");
+                Console.WriteLine("3. Delete a Record");
                 Console.WriteLine("4.Exit");
                 Console.WriteLine("\nEnter your choice : ");
 
@@ -29,6 +30,12 @@ namespace AddressBook
                         string ln = Console.ReadLine();// Store the user last name in variable
                         records.UpdateRecords(fn, ln); // Calling a method of AddressBook class to update records of address book with passing first name and last name as arguments
                         records.PrintRecords(); // Calling a method of AddressBook class to display records of address book
+                        break;
+                    case 3:
+                        Console.WriteLine("\nEnter your first name which you want to delete : ");
+                        string f = Console.ReadLine(); // Store the user firstname in variable
+                        records.DeleteRecord(f);// Calling a method of AddressBook class to delete record of address book
+                        records.PrintRecords();// Calling a method of AddressBook class to display records of address book
                         break;
                     case 4:
                         System.Environment.Exit(0); // Exit
